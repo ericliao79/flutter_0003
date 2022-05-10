@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() {
+void main() async {
+
+  // 確保 flutter 載入完成
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // 鎖住屏幕旋轉
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]);
+
   runApp(const MyApp());
 }
 
